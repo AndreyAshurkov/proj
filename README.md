@@ -1,5 +1,5 @@
 ## Flight timetable
-Progect by Ashurkov Andrew and Perfilyeva Olga
+Prgct by Ashurkov Andrew and Perfilyeva Olga
 ## Introduction:
 ## Trello Board:
 
