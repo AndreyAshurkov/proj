@@ -1,6 +1,5 @@
 ## Flight timetable
 Prgct by Ashurkov Andrew and Perfilyeva Olga
-## Introduction:
 ## Trello Board:
 
 https://trello.com/b/JXNkR1QD/progtech
