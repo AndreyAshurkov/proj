@@ -5,5 +5,6 @@ Prgct by Ashurkov Andrew and Perfilyeva Olga
 https://trello.com/b/JXNkR1QD/progtech
 ## Functional Diagram:
 
-https://realtimeboard.com/app/board/o9J_kxmBL58=/
+https://miro.com/app/board/o9J_kxmBL58=/
+
 
