@@ -14,6 +14,19 @@ def main():
     #session.clear()
     return render_template('hello.html')
 
+
+from service import registrationService
+from service import authorizationService
+from service import buyTicketService
+from service import changeTimetableService
+from service import changeTicketService
+
+app.register_blueprint(changeTimetableService.mod)
+app.register_blueprint(changeTicketService.mod)
+app.register_blueprint(registrationService.mod)
+app.register_blueprint(authorizationService.mod)
+app.register_blueprint(buyTicketService.mod)
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='127.0.0.1', port=5000, debug=True)
