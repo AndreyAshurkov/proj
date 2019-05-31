@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session.admin%}
+<a href="{{ url_for('changeTimetable.createflight') }}">Create flight</a>
+{% endif%}
+<form action="{{ url_for('buyService.findflight') }}" method=post>
+    <input type=text name = "departtime" placeholder="departtime">
+    <input type=text name = "pointfrom" placeholder="pointfrom">
+    <input type=text name = "pointto" placeholder="pointto">
+
+    <input type=submit value=Find>
+</form>
+<table border=1 bordercolor="#000000">
+    <thead>
+    <td>Depart Time</td>
+    <td>Arrive Time</td>
+    <td>Pointfrom</td>
+    <td>Pointto</td>
+    <td>Numberseats</td>
+    <td>Airline</td>
+    <td>Cost</td>
+    <td></td>
+    </thead>
+    {% for flight in flights %}
+    <tr>
+        <td>{{flight.depart}}</td>
+        <td>{{flight.arrive}}</td>
+        <td>{{flight.pointfrom}}</td>
+        <td>{{flight.pointto}}</td>
+        <td>{{flight.numberseats}}</td>
+        <td>{{flight.airline}}</td>
+        <td>{{flight.cost}}</td>
+        {% if session.admin%}
+        <td>
+            <form action="{{ url_for('changeTimetable.deleteflight') }}" method=post>
+                <input type=hidden name=id value="{{flight.id}}">
+                <input type=submit value=delete>
+            </form>
+        </td>
+        {% else%}
+        <td>
+            <form action="{{ url_for('buyService.ticket') }}" method=post>
+                <input type=hidden name=id value="{{flight.id}}">
+                <input type=submit value=buy>
+            </form>
+        </td>
+        {% endif%}
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a {% if session.admin%} {% else%} href="{{ url_for('changeTicket.mytickets') }}">My tickets {% endif%}</a>
+{% endblock %}

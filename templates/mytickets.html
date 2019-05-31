@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+<table border=0 bordercolor="#FFFFFF">
+    <thead>
+    <td>Depart Time</td>
+    <td>Arrive Time</td>
+    <td>Pointfrom</td>
+    <td>Pointto</td>
+    <td>Airline</td>
+    <td>Cost</td>
+    <td></td>
+    </thead>
+    {% for flight in flights %}
+    <tr>
+        <td>{{flight[1].depart}}</td>
+        <td>{{flight[1].arrive}}</td>
+        <td>{{flight[1].pointfrom}}</td>
+        <td>{{flight[1].pointto}}</td>
+        <td>{{flight.airline}}</td>
+        <td>{{flight[0].cost}}</td>
+        <td>
+            <form action="{{ url_for('changeTicket.deleteticket') }}" method=post>
+                <input type=hidden name=id value="{{flight[0].id}}">
+                <input type=submit value=delete>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href = "{{ url_for('buyService.flight') }}">Show list of flight</a>
+{% endblock %}

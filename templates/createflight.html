@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Create flight</h2>
+  <form action="{{ url_for('changeTimetable.createflight') }}" method=post>
+    <dl>
+      <dt>Depart Time:
+      <dd><input type=text name=depart>
+      <dt>Arrive Time:
+      <dd><input type=text name=arrive>
+      <dt>Pointfrom:
+      <dd><input type=text name=pointfrom>
+        <dt>Pointto:
+      <dd><input type=text name=pointto>
+        <dt>Airline:
+        <dd><select name="airline">
+             {% for airline in airlines %}
+             <option selected value="{{ airline.id }}">{{airline.title}}</option>
+             {% endfor %}
+            </select>
+        <dt>Numberseats:
+      <dd><input type=text name=numberseats>
+      <dt>Cost:
+      <dd><input type=text name=cost>
+
+      <dd><input type=submit value=create>
+    </dl>
+  </form>
+<a href = "{{ url_for('buyService.flight') }}">Show list of flight</a>
+{% endblock %}

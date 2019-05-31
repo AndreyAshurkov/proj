@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Hello</h2>
+<a href = "{{ url_for('buyService.flight') }}">Show list of flight</a>
+<br>
+<a {% if session.admin%} {% else%} href = "{{ url_for('changeTicket.mytickets') }}">My tickets {% endif%}</a>
+{% endblock %}
