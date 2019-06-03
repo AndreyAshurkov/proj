@@ -3,5 +3,5 @@
   <h2>Hello</h2>
 <a href = "{{ url_for('buyService.flight') }}">Show list of flight</a>
 <br>
-<a {% if session.admin%} {% else%} href = "{{ url_for('changeTicket.mytickets') }}">My tickets {% endif%}</a>
+<a {% if session.admin%} {% else%} {% if session.logged_in%} href = "{{ url_for('changeTicket.mytickets') }}">My tickets {% else%} {% endif%}{% endif%}</a>
 {% endblock %}

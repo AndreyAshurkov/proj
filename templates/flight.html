@@ -37,17 +37,17 @@
                 <input type=submit value=delete>
             </form>
         </td>
-        {% else%}
+        {% else%} {% if session.logged_in%}
         <td>
             <form action="{{ url_for('buyService.ticket') }}" method=post>
                 <input type=hidden name=id value="{{flight.id}}">
                 <input type=submit value=buy>
             </form>
         </td>
-        {% endif%}
+        {% endif%} {% endif%}
     </tr>
     {% endfor %}
 </table>
 <br>
-<a {% if session.admin%} {% else%} href="{{ url_for('changeTicket.mytickets') }}">My tickets {% endif%}</a>
+<a {% if session.admin%} {% else%} {% if session.logged_in%} href="{{ url_for('changeTicket.mytickets') }}">My tickets {% endif%}{% endif%}</a>
 {% endblock %}
