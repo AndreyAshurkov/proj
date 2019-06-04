@@ -11,4 +11,4 @@ https://miro.com/app/board/o9J_kxmBL58=/
 https://github.com/AndreyAshurkov/proj/blob/master/Docs/%D0%A2%D0%97.docx
 ## Course Project:
 
-https://github.com/AndreyAshurkov/proj/blob/master/Docs/Курсовой проект.docx
+https://github.com/AndreyAshurkov/proj/blob/master/Docs/Курсовойпроект.docx
