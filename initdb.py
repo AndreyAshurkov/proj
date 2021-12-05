@@ -11,8 +11,10 @@ def init():
     admin = Admin(username='admin', password='admin')
     airline1 = Airline(title='Aeroflot')
     airline2 = Airline(title='Ural airlines')
+    airline3 = Airline(title='S7 airlines')
     db.session.add(admin)
     db.session.add(airline1)
+    db.session.add(airline2)
     db.session.add(airline2)
     db.session.commit()
 
